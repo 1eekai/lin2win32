@@ -134,3 +134,10 @@ pid_t fork(void){
     free(procpath);
     return 0;
 }
+/*
+ *	TMD！！辛辛苦苦写了这个fork结果发现不一样，
+ *	只是实现了“新建一个自己”的功能，并没有真正实现UNIX系统里的fork()调用。
+ *	看来我应该参考一下Cygwin的源码。
+ *	为什么我一开始就想到应该使用 WINAPI CreateProcess()来实现，是因为我听说的Cygwin
+ *	实现方式是使用CreateProcess()来包装，然后自己想动手实现，但是这个真的不简单。	
+ */
